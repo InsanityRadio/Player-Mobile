@@ -9,7 +9,7 @@ import Container from './Container';
 class NoFloatActionButton extends ActionButton {
 
 	renderButton = (styles) => (
-		<Animated.View>
+		<Animated.View style={{ marginRight: 15 }}>
 			{this.renderMainButton(styles)}	
 		</Animated.View>
 	)
@@ -18,18 +18,56 @@ class NoFloatActionButton extends ActionButton {
 
 export default class PlayerControls extends React.Component {
 
+	getPlayerState () {
+		return this.props.playerState || {
+			playing: false,
+			buffering: true
+		}
+	}
+
+	toggleVideo () {
+		this.props.loadVideo();
+	}
+
 	render () {
+
+		let icon = Icons.play;
+		let state = this.getPlayerState();
+
+		if (state.playing) {
+			icon = Icons.pause;
+		} else if (state.buffering) {
+			icon = Icons.ellipsisH;
+		}
+
+		if (!this.props.player) {
+			return null;
+		}
+
+		const height = this.props.scrollY.interpolate({
+			inputRange: [0, 150],
+			outputRange: [200, 50],
+			extrapolate: 'clamp'
+		})
+
+		const opacity = this.props.scrollY.interpolate({
+			inputRange: [100, 120],
+			outputRange: [1, 0]
+		})
+
+		let video = true;
+
 		return (
-			<View style={{ height: 200, backgroundColor: '#C00' }}>
+			<Animated.View style={{ height: height, backgroundColor: '#C00' }}>
 				<ImageBackground
-					style={{ height: 200, width: '100%' }}
+					style={{ height: '100%', width: '100%' }}
 					source={ require('../../assets/images/texture.jpg') }>
 
-					<View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', height: 200 }}>
+					<View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', height: '100%' }}>
 
 						<View style={{ margin: 5 }}>
-							<Image
-								style={{ width: 150, height: 150 }}
+							<Animated.Image
+								style={{ width: 150, height: 150, opacity: opacity }}
 								resizeMode="contain"
 								source={ require('../../assets/images/logo_light.png') } />
 						</View>
@@ -38,19 +76,29 @@ export default class PlayerControls extends React.Component {
 
 						</View>
 
-						<View style={{ marginRight: 15 }}>
+						<View style={{ marginRight: 0 }}>
 							<View style={{ alignItems: 'center', flexDirection: 'row' }}>
+
+								{ video && <NoFloatActionButton
+									toolbar=""
+									onPress={ this.toggleVideo.bind(this) }
+									style={{ flex: 1, marginRight: 10, position: 'inherit' }}
+									icon={ <FontAwesome style={{ fontSize: 24, color: '#000' }}>{ Icons.videoCamera }</FontAwesome> } /> }
+
 								<NoFloatActionButton
 									toolbar=""
+
+									onPress={ this.props.player.toggle.bind(this.props.player) }
+
 									style={{ flex: 1, position: 'inherit' }}
-									icon={ <FontAwesome style={{ fontSize: 24, color: '#000' }}>{Icons.pause}</FontAwesome> } />
+									icon={ <FontAwesome style={{ fontSize: 24, color: '#000' }}>{ icon }</FontAwesome> } />
 							</View>
 						</View>
 
 					</View>
 
 				</ImageBackground>
-			</View>
+			</Animated.View>
 		);
 	}
 

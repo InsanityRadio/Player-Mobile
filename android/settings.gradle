@@ -1,0 +1,13 @@
+rootProject.name = 'com.insanityradio.player_v2'
+include ':react-native-video'
+project(':react-native-video').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-video/android')
+include ':react-native-eventsource'
+project(':react-native-eventsource').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-eventsource/android')
+include ':react-native-vector-icons'
+project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
+include ':react-native-track-player'
+project(':react-native-track-player').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-track-player/android')
+include ':react-native-svg'
+project(':react-native-svg').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-svg/android')
+
+include ':app'

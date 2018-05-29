@@ -1,8 +1,4 @@
 {
-  "expo": {
-	"sdkVersion": "27.0.0",
-	"androidStatusBar": {
-		"backgroundColor": "#000000"
-	}
-  }
+  "name": "com.insanityradio.player_v2",
+  "displayName": "com.insanityradio.player_v2"
 }
