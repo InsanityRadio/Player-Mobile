@@ -109,11 +109,13 @@ android {
     }
     
     signingConfigs {
-        if (project.hasProperty('INSANITY_RELEASE_STORE_FILE')) {
+        release {
+            if (project.hasProperty('INSANITY_RELEASE_STORE_FILE')) {
                 storeFile file(INSANITY_RELEASE_STORE_FILE)
                 storePassword INSANITY_RELEASE_STORE_PASSWORD
                 keyAlias INSANITY_RELEASE_KEY_ALIAS
                 keyPassword INSANITY_RELEASE_KEY_PASSWORD
+            }
         }
     }
     
