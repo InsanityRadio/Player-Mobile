@@ -5,11 +5,9 @@ import { COLOR, ThemeProvider, Toolbar } from 'react-native-material-ui';
 import Container from './Container';
 import PlayerControls from './PlayerControls';
 import PlayerMeta from './PlayerMeta';
-import Video from 'react-native-video';
+import VideoPlayer from 'react-native-video-controls';
 
 export default class PlayerMain extends React.Component {
-
-	URL = 'https://stream.cor.insanityradio.com/manifest/hls/video.m3u8'
 
 	state = {
 		video: false
@@ -20,26 +18,36 @@ export default class PlayerMain extends React.Component {
 			'Warning',
 			"Video is only currently available in HD. This won't work unless you're on fast 4G or Wi-Fi. If on 4G, unless you're on an unlimited data plan, this will use a very large chunk of your allowance.",
 			[
-				{ text: 'Cancel', onPress: () => this.setState({ video: false }), style: 'cancel' },
+				{ text: 'Cancel', onPress: () => this.stopVideo(), style: 'cancel' },
 				{ text: 'Watch', onPress: () => this.setState({ video: true })}
 			],
 			{ cancelable: true }
 		)
 	}
 
+	stopVideo () {
+		this.setState({ video: false });
+	}
+
 	componentWillUpdate (newProps, newState) {
+
+		let autoplay = true;
+
 		if (this.props.player && newState.video != this.state.video) {
-			newState.video ? this.props.player.stop() : this.props.player.go();
+			newState.video ? this.props.player.stop() : (autoplay && this.props.player.go());
 		}
+
 	}
 
 	renderVideo () {
 
 		return (
-			<Animated.View>
-				<Video
+			<Animated.View style={{ height: 400 }}>
+				<VideoPlayer
+					videoStyle={{ height: 400 }}
 					style={{ height: 400 }}
 					source={{ uri: this.URL }}
+					poster="https://insanityradio.com/res/slate.png"
 					ref={ (a) => this.video = a }
 					playInBackground={ false }
 					resizeMode="contain"
@@ -47,7 +55,9 @@ export default class PlayerMain extends React.Component {
 					onBuffer={ (a) => console.warn('onBuffer', a) }
 					onError={ (a) => console.warn('onError', a) }
 					onLoadStart={ (a) => console.warn('onLoadStart', a) }
+					onBack={ (a) => this.stopVideo() }
 					onEnd={ (a) => console.warn('onEnd', a) } />
+				<Text>FUCK</Text>
 			</Animated.View>
 		)
 

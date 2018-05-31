@@ -21,7 +21,26 @@ To build for iOS and Android platforms, you need either Xcode or Android Studio 
 
 ### Building For Release on Android
 
+Make sure you have some sort of app signing key set-up. For Insanity, this should be the keystore we've used since 1.0, as the certificate chains need to match or something.
+
+First, build the JavaScript bundle
+
 `npx react-native bundle --platform android --dev false --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/ --entry-file index.js`
+
+Next, make sure you've edited `~/.gradle/gradle.properties` and filled in the following:
+
+	INSANITY_RELEASE_STORE_FILE=/path/to/my-release-key.keystore
+	INSANITY_RELEASE_KEY_ALIAS=my-key-alias
+	INSANITY_RELEASE_STORE_PASSWORD=*****
+	INSANITY_RELEASE_KEY_PASSWORD=*****
+
+
+You can get these values from the Head of Computing if you need them for any reason. 
+
+Finally, build and sign the APK.
+
+`bash -c 'cd android && ./gradlew assembleRelease'`
+
 
 ### Building For Release on iOS
 
@@ -31,5 +50,5 @@ First, build the JavaScript bundle
 
 Next, edit `AppDelegate.m`. You must swap over comments on the lines starting `jsCodeLocation = `, such that the bottom one is uncommented. 
 
-Third, with the application open in Xcode and go to Product, Build
+Third, with the application open in Xcode, go to Product, Build. This will build the app for release. 
 
