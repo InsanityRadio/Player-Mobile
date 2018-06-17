@@ -5,6 +5,7 @@ import { COLOR, ThemeProvider, Toolbar, ActionButton } from 'react-native-materi
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 
 import Container from './Container';
+import MusicControl from 'react-native-music-control';
 
 class PlayerMetaBackend {
 	constructor (url) {
@@ -79,11 +80,21 @@ export default class PlayerMeta extends React.Component {
 
 	componentWillMount () {
 		this.source = new WebSocketPlayerMetaBackend(this.URL);
-		this.source.onData = (a) => this.setState(a);
+		this.source.onData = (a) => this.setPlayingData(a);
 	}
 
 	componentWillUnmount () {
 		this.source && this.source.destroy();
+	}
+
+	setPlayingData (data) {
+		this.setState(data);
+
+		MusicControl.setNowPlaying({
+			title: data.nowPlaying.song,
+			artwork: data.nowPlaying.album_art,
+			artist: data.nowPlaying.artist
+		})
 	}
 
 	render () {

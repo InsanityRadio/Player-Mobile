@@ -22,6 +22,7 @@
     "react-native": "~0.55.2",
     "react-native-fontawesome": "^5.7.0",
     "react-native-material-ui": "^1.22.3",
+    "react-native-music-control": "^0.5.5",
     "react-native-svg": "^6.3.1",
     "react-native-track-player": "^0.2.4",
     "react-native-vector-icons": "^4.6.0",
