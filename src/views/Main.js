@@ -72,11 +72,11 @@ export default class Main extends React.Component {
 						<ScheduleMain />
 					</View>
 				</ScrollView>
-				<PlayerMain
+				{ this.state.player && <PlayerMain
 					styles={ styles }
 					scrollY={ this.scrollY }
 					player={ this.state.player }
-					playerState={ this.state.playerState } />
+					playerState={ this.state.playerState } /> }
 				<Player
 					ref={ (a) => this.setPlayer(a) }
 					onStateChange={ (state) => this.setState({ playerState: state })} />

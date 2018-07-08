@@ -1,6 +1,6 @@
 import React from 'react';
-import { Platform } from 'react-native';
-import TrackPlayer from 'react-native-track-player';
+import { Platform, DeviceEventEmitter } from 'react-native';
+import RNAudioStreamer from 'react-native-audio-streamer';
 
 export default class Player extends React.Component {
 
@@ -16,8 +16,17 @@ export default class Player extends React.Component {
 
 		this.updateState(0)
 
+		this.subscription = DeviceEventEmitter.addListener('RNAudioStreamerStatusChanged', this._statusChanged.bind(this))
 
-		TrackPlayer.setupPlayer().then(async () => {
+		RNAudioStreamer.status((err, status)=>{
+			console.warn(status)
+			this._statusChanged(status);
+			if (err) console.warn(err);
+		})
+
+		this.go();
+
+		/*TrackPlayer.setupPlayer().then(async () => {
 
 			TrackPlayer.registerEventHandler(async (data) => {
 
@@ -37,7 +46,7 @@ export default class Player extends React.Component {
 
 			this.go();
 
-		});
+		}); */
 
 	}
 
@@ -46,6 +55,7 @@ export default class Player extends React.Component {
 	}
 
 	updateState (state) {
+		return;
 		this.setState({
 			stateID: state,
 			playing: state == TrackPlayer.STATE_PLAYING,
@@ -53,34 +63,64 @@ export default class Player extends React.Component {
 		}, () => this.props.onStateChange(this.state));
 	}
 
+	_statusChanged(state) {
+
+		this.setState({
+			stateID: state,
+			playing: state == 'PLAYING',
+			buffering: state == 'BUFFERING',
+		}, this.onStateChange.bind(this));
+
+	}
+
+	onStateChange () {
+
+		if (this.musicControl) {
+			let s = this.musicControl;
+			s.updatePlayback({
+				state: this.state.playing ? s.STATE_PLAYING : (this.state.buffering ? s.STATE_BUFFERING : s.STATE_STOPPED)
+			})
+		}
+
+		this.props.onStateChange(this.state);
+		this._onStateChange(this.state);
+
+	}
+
 	go () {
 
-		let ios = 'https://stream.cor.insanityradio.com/insanity128.aac',
-			android = 'https://stream.cor.insanityradio.com/insanity/hls/insanity.m3u8';
+		let ios = 'http://scdnc.insanityradio.com/dash/hls/insanity/index.m3u8'; //'https://stream.cor.insanityradio.com/insanity128.aac',
+			android = 'http://scdnc.insanityradio.com/dash/dash/insanity/index.mpd'; //'https://stream.cor.insanityradio.com/insanity/hls/insanity.m3u8';
 
-		TrackPlayer.reset();
+		let url = Platform.OS != 'ios' ? ios : android;
 
-		TrackPlayer.add({
-			id: 'insanity',
-			url: Platform.OS == 'ios' ? ios : android,
-			title: 'Insanity Radio',
-			artist: 'Artist',
-		}).then(() => TrackPlayer.play());
+		RNAudioStreamer.setUrl(url);
+		RNAudioStreamer.play();
 
 	}
 
 	stop () {
-		TrackPlayer.stop();
+		RNAudioStreamer.setUrl('');
 	}
 
 	toggle () {
 
 		if (this.state.playing || this.state.buffering) {
-			return TrackPlayer.stop();
+			return this.stop();
 		}
 
 		this.go();
 
+	}
+
+	registerControl (musicControl) {
+		this.musicControl = musicControl;
+		musicControl.on('play', () => {
+			this.go();
+		})
+		musicControl.on('stop', () => {
+			this.stop();
+		})
 	}
 
 	render () {

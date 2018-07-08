@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, BackHandler } from 'react-native';
 import { COLOR, ThemeProvider } from 'react-native-material-ui';
 
 import Main from './views/Main';
@@ -22,8 +22,16 @@ export default class App extends React.Component {
 		ready: 0
 	}
 	
-	componentWillMount () {
+	componentDidMount () {
+		BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
+	}
 
+	componentWillUnmount () {
+		BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
+	}
+
+	handleBackButton() {
+		return true;
 	}
 
 	pushLoad () {

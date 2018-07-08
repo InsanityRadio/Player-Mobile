@@ -3,6 +3,7 @@ package com.com.insanityradio.player_v2;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import fm.indiecast.rnaudiostreamer.RNAudioStreamerPackage;
 import com.tanguyantoine.react.MusicControl;
 import com.brentvatne.react.ReactVideoPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -28,6 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNAudioStreamerPackage(),
             new MusicControl(),
             new ReactVideoPackage(),
           new TrackPlayer(),

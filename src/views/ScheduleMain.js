@@ -42,6 +42,7 @@ export default class ScheduleMain extends React.Component {
 		.then((data) => data.json())
 		.then((data) => this.setSchedule(data.schedule))
 		.then((data) => this.scheduleLoaded())
+		.catch((e) => console.warn('Error loading web data!', e))
 	}
 
 	setSchedule (schedule) {

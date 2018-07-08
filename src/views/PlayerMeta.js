@@ -79,8 +79,34 @@ export default class PlayerMeta extends React.Component {
 	}
 
 	componentWillMount () {
+
+		console.warn('fack')
+
 		this.source = new WebSocketPlayerMetaBackend(this.URL);
 		this.source.onData = (a) => this.setPlayingData(a);
+
+		this.setupControls();
+
+	}
+
+	setupControls () {
+
+		MusicControl.enableBackgroundMode(true);
+		MusicControl.handleAudioInterruptions(true);
+		MusicControl.enableControl('closeNotification', true, {when: 'paused'})
+
+		MusicControl.enableControl('play', true)
+		MusicControl.enableControl('pause', false)
+		MusicControl.enableControl('stop', true)
+		MusicControl.enableControl('nextTrack', false)
+		MusicControl.enableControl('previousTrack', false)
+
+		this.props.player.registerControl(MusicControl);
+
+		this.props.player._onStateChange = (state) => {
+			this.setPlayingData(this.state);
+		}
+
 	}
 
 	componentWillUnmount () {
@@ -90,11 +116,14 @@ export default class PlayerMeta extends React.Component {
 	setPlayingData (data) {
 		this.setState(data);
 
-		MusicControl.setNowPlaying({
-			title: data.nowPlaying.song,
-			artwork: data.nowPlaying.album_art,
-			artist: data.nowPlaying.artist
-		})
+		if (this.props.playerState && this.props.playerState.playing) {
+			MusicControl.setNowPlaying({
+				title: data.nowPlaying.song,
+				artwork: data.nowPlaying.album_art,
+				artist: data.nowPlaying.artist	
+			})
+		}
+
 	}
 
 	render () {
