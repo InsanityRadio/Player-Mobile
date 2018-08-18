@@ -52,12 +52,12 @@ export default class PlayerMain extends React.Component {
 					playInBackground={ false }
 					resizeMode="contain"
 					playWhenInactive={ true }
-					onBuffer={ (a) => console.warn('onBuffer', a) }
-					onError={ (a) => console.warn('onError', a) }
-					onLoadStart={ (a) => console.warn('onLoadStart', a) }
+					onBuffer={ (a) => false && console.warn('onBuffer', a) }
+					onError={ (a) => false && console.warn('onError', a) }
+					onLoadStart={ (a) => false && console.warn('onLoadStart', a) }
 					onBack={ (a) => this.stopVideo() }
-					onEnd={ (a) => console.warn('onEnd', a) } />
-				<Text>FUCK</Text>
+					onEnd={ (a) => false && console.warn('onEnd', a) } />
+				<Text></Text>
 			</Animated.View>
 		)
 

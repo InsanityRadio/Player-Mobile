@@ -2,6 +2,8 @@ import React from 'react';
 import { Platform, DeviceEventEmitter } from 'react-native';
 import RNAudioStreamer from 'react-native-audio-streamer';
 
+import config from '../config';
+
 export default class Player extends React.Component {
 
 	constructor (props) {
@@ -19,7 +21,6 @@ export default class Player extends React.Component {
 		this.subscription = DeviceEventEmitter.addListener('RNAudioStreamerStatusChanged', this._statusChanged.bind(this))
 
 		RNAudioStreamer.status((err, status)=>{
-			console.warn(status)
 			this._statusChanged(status);
 			if (err) console.warn(err);
 		})
@@ -100,6 +101,7 @@ export default class Player extends React.Component {
 	}
 
 	stop () {
+		RNAudioStreamer.pause();
 		RNAudioStreamer.setUrl('');
 	}
 

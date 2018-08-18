@@ -2,8 +2,12 @@ import React from 'react';
 import { Animated, StyleSheet, Text, Image, ImageBackground, View, StatusBar, AsyncStorage } from 'react-native';
 import { COLOR, ThemeProvider, Toolbar, ActionButton, ListItem } from 'react-native-material-ui';
 
+import Moment from 'react-moment';
+
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 
+Moment.globalLocale = 'en-GB';
+Moment.globalFormat = 'ddd D MMM';
 
 export default class ScheduleMain extends React.Component {
 
@@ -13,7 +17,7 @@ export default class ScheduleMain extends React.Component {
 			schedule: {}
 		},
 		// Reload the schedule from the backend every 30 minutes. 
-		scheduleReload: 1800000,
+		scheduleReload: 1000 * 300,
 		day: null
 	}
 
@@ -26,12 +30,20 @@ export default class ScheduleMain extends React.Component {
 
 		AsyncStorage.getItem('@Insanity:schedule').then((data) => {
 			if (data != null) {
-				let schedule = JSON.parse(data);
-				this.setState({
-					loadedSchedule: schedule
-				}, () => this.scheduleLoaded())
-			} else {
+
+				try {
+
+					let schedule = JSON.parse(data);
+					this.setState({
+						loadedSchedule: schedule
+					}, () => this.scheduleLoaded())
+					return;
+
+				} catch (e) {
+				}
+
 				this.loadSchedule()
+
 			}
 		})
 
@@ -42,7 +54,7 @@ export default class ScheduleMain extends React.Component {
 		.then((data) => data.json())
 		.then((data) => this.setSchedule(data.schedule))
 		.then((data) => this.scheduleLoaded())
-		.catch((e) => console.warn('Error loading web data!', e))
+		.catch((e) => x.warn('Error loading web data!', e))
 	}
 
 	setSchedule (schedule) {
@@ -110,6 +122,25 @@ export default class ScheduleMain extends React.Component {
 		)
 	}
 
+	formatDay (yymmdd) {
+
+		yymmdd = yymmdd.split("-")
+		let date = new Date(yymmdd[0], yymmdd[1] - 1, yymmdd[2]);
+		let today = (new Date().toDateString()) == date.toDateString();
+
+		return (
+			<Text>
+				<Text style={{ color: 'black', paddingRight: 5 }}>
+					<Moment
+						element={ Text }>
+						{ date }
+					</Moment>
+				</Text>
+				{ today ? ' Today' : '' }
+			</Text>
+		);
+	}
+
 	render () {
 
 		let style = { color: '#FFF', fontFamily: 'JosefinSans-Bold' }
@@ -126,7 +157,7 @@ export default class ScheduleMain extends React.Component {
 				{ days.map((day) => <ListItem 
 					divider
 					key={ day }
-					centerElement={{ primaryText: day }}
+					centerElement={ this.formatDay(day) }
 					onPress={ (a) => this.setState({ day: day }) } />) }
 			</View>
 		);

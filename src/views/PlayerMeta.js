@@ -27,17 +27,24 @@ class WebSocketPlayerMetaBackend extends PlayerMetaBackend {
 
 	connect () {
 
-		this.ws = new WebSocket(this.url);
+		this.ws = new WebSocket(this.url, ['ws+meta.nchan']);
 
 		this.ws.onopen = (a) => {
 		}
+
 		this.ws.onmessage = (data) => {
-			data = JSON.parse(data.data)
+
+			let proto = data.data.split("\n\n");
+
+			data = JSON.parse(proto[1])
 			this.emit(data);
+
 		}
+
 		this.ws.onclose = () => {
 			this.closing || setTimeout(this.connect.bind(this), 100);
 		}
+
 		this.ws.onerror = (e) => {
 			this.closing || setTimeout(this.connect.bind(this), 100);
 		}
@@ -80,10 +87,8 @@ export default class PlayerMeta extends React.Component {
 
 	componentWillMount () {
 
-		console.warn('fack')
-
 		this.source = new WebSocketPlayerMetaBackend(this.URL);
-		this.source.onData = (a) => this.setPlayingData(a);
+		this.source.onData = (a) => this.setPlayingDataWithWait(a);
 
 		this.setupControls();
 
@@ -111,6 +116,13 @@ export default class PlayerMeta extends React.Component {
 
 	componentWillUnmount () {
 		this.source && this.source.destroy();
+	}
+
+	setPlayingDataWithWait (data) {
+		clearTimeout(this._timeout);
+		this._timeout = setTimeout(() => {
+			this.setPlayingData(data);
+		}, 500);
 	}
 
 	setPlayingData (data) {
