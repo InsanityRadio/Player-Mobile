@@ -14,8 +14,8 @@ let config = global.config = {
 				// As a result, every 5 seconds quality sounds terrible for 0.1s.
 				// Maybe one day, this bug will be fixed... Until then, Icecast!
 
-				ios: 'https://stream.cor.insanityradio.com/insanity128.aac',
-				android: 'https://stream.cor.insanityradio.com/insanity/hls/insanity.m3u8',
+				ios: 'http://scdnc.insanityradio.com/dash/hls/insanity/index.m3u8',
+				android: 'http://scdnc.insanityradio.com/dash/dash/insanity/index.mpd',
 				other: 'https://stream.cor.insanityradio.com/insanity128.mp3'
 			},
 			video: {
@@ -63,4 +63,4 @@ let stationConfig = function (station) {
 
 let Config = new stationConfig(config.stations[0])
 
-export default stationConfig;
+export default Config;

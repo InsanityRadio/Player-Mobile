@@ -44,6 +44,8 @@ export default class ScheduleMain extends React.Component {
 
 				this.loadSchedule()
 
+			} else {
+				this.loadSchedule()
 			}
 		})
 

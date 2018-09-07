@@ -22,30 +22,41 @@ class WebSocketPlayerMetaBackend extends PlayerMetaBackend {
 
 	constructor (url) {
 		super(url);
+
+		this.id = ((Math.random() * 10000) | 0);
 		this.connect();
 	}
 
 	connect () {
 
-		this.ws = new WebSocket(this.url, ['ws+meta.nchan']);
+		this.ws = new WebSocket(this.url); 
 
 		this.ws.onopen = (a) => {
+			console.log('WebSocket opened (yay)')
 		}
 
 		this.ws.onmessage = (data) => {
 
-			let proto = data.data.split("\n\n");
+			if (this.closing) {
+				return;
+			}
 
-			data = JSON.parse(proto[1])
+			//let proto = data.data.split("\n\n");
+
+			console.log('rx', this.id, data.data);
+
+			data = JSON.parse(data.data); //proto[1])
 			this.emit(data);
 
 		}
 
 		this.ws.onclose = () => {
+			console.log('WebSocket closed')
 			this.closing || setTimeout(this.connect.bind(this), 100);
 		}
 
 		this.ws.onerror = (e) => {
+			console.log('WebSocket error', e)
 			this.closing || setTimeout(this.connect.bind(this), 100);
 		}
 
@@ -58,6 +69,8 @@ class WebSocketPlayerMetaBackend extends PlayerMetaBackend {
 	destroy () {
 		this.closing = true;
 		this.close();
+
+		clearInterval(this.int);
 	}
 
 	close () {
@@ -68,7 +81,7 @@ class WebSocketPlayerMetaBackend extends PlayerMetaBackend {
 
 export default class PlayerMeta extends React.Component {
 
-	URL = "https://webapi.insanityradio.com/subscribe?id=1"
+	URL = "https://webapi.insanityradio.com/subscribe?id=1&last=1"
 
 	state = {
 		nowPlaying: {
@@ -87,11 +100,23 @@ export default class PlayerMeta extends React.Component {
 
 	componentWillMount () {
 
-		this.source = new WebSocketPlayerMetaBackend(this.URL);
-		this.source.onData = (a) => this.setPlayingDataWithWait(a);
+		this.enableSource();
 
 		this.setupControls();
 
+	}
+
+	enableSource () {
+		this.source && this.source.destroy();
+		this.source = new WebSocketPlayerMetaBackend(this.URL);
+		// This is no longer needed provided last=1 works
+		// this.source.onData = (a) => this.setPlayingDataWithWait(a);
+		this.source.onData = (a) => this.setPlayingData(a);
+	}
+
+	disableSource () {
+		this.source && this.source.destroy();
+		this.source = null;
 	}
 
 	setupControls () {
@@ -109,16 +134,17 @@ export default class PlayerMeta extends React.Component {
 		this.props.player.registerControl(MusicControl);
 
 		this.props.player._onStateChange = (state) => {
-			this.setPlayingData(this.state);
+			setTimeout(() => this.setPlayingData(this.state), 10);
 		}
 
 	}
 
 	componentWillUnmount () {
-		this.source && this.source.destroy();
+		this.disableSource();
 	}
 
 	setPlayingDataWithWait (data) {
+		console.log('Queued set data', data, data.nowPlaying && data.nowPlaying.song)
 		clearTimeout(this._timeout);
 		this._timeout = setTimeout(() => {
 			this.setPlayingData(data);
@@ -129,11 +155,20 @@ export default class PlayerMeta extends React.Component {
 		this.setState(data);
 
 		if (this.props.playerState && this.props.playerState.playing) {
+			console.log('Updating music control data', data.nowPlaying.song)
 			MusicControl.setNowPlaying({
 				title: data.nowPlaying.song,
 				artwork: data.nowPlaying.album_art,
 				artist: data.nowPlaying.artist	
 			})
+		}
+
+		if (this.props.playerState && this.props.playerState.playing) {
+			this.source || console.log('State change, enabling data source')
+			this.source || this.enableSource();
+		} else {
+			console.log('State change, disabling data source')
+			this.disableSource();
 		}
 
 	}

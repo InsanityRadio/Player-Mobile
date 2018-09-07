@@ -2,7 +2,7 @@ import React from 'react';
 import { Platform, DeviceEventEmitter } from 'react-native';
 import RNAudioStreamer from 'react-native-audio-streamer';
 
-import config from '../config';
+import config from './config';
 
 export default class Player extends React.Component {
 
@@ -95,7 +95,7 @@ export default class Player extends React.Component {
 
 		let url = Platform.OS != 'ios' ? ios : android;
 
-		RNAudioStreamer.setUrl(url);
+		RNAudioStreamer.setUrl(config.getURLForAudio());
 		RNAudioStreamer.play();
 
 	}
