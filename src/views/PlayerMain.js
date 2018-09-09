@@ -190,7 +190,6 @@ class PlayerWrap extends React.Component {
 				<Video
 					style={{ height: fullscreen ? '100%' : this.props.height }}
 					source={ this.props.source }
-					poster="https://insanityradio.com/res/slate.png"
 					ref={ (a) => this.setPlayer(a) }
 
 					playInBackground={ false }

@@ -12,7 +12,8 @@
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "node ./scripts/android-release-gradle-fix.js"
   },
   "jest": {
     "preset": "react-native"

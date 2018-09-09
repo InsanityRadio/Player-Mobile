@@ -95,7 +95,7 @@ export default class Main extends React.Component {
 					onScroll={ Animated.event(
 						[{ nativeEvent: { contentOffset: { y: this.scrollY }}}]
 					) }>
-					<View style={{ marginTop: this.state.video ? 350 : 300 }}>
+					<View style={{ marginTop: this.state.video ? 350 : 265 }}>
 						<ScheduleMain />
 					</View>
 				</ScrollView>
