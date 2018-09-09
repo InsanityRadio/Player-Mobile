@@ -1,4 +1,4 @@
-package com.com.insanityradio.player_v2;
+package com.insanityradio.insanityradio;
 
 import com.facebook.react.ReactActivity;
 import android.content.Intent; // <--- import

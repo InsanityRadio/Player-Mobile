@@ -98,11 +98,11 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.com.insanityradio.player_v2"
+        applicationId "com.insanityradio.insanityradio"
         minSdkVersion 16
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 26
+        versionCode 20
+        versionName "2.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
