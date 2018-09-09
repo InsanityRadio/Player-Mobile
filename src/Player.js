@@ -123,6 +123,9 @@ export default class Player extends React.Component {
 		musicControl.on('stop', () => {
 			this.stop();
 		})
+		musicControl.on('pause', () => {
+			this.stop();
+		})
 	}
 
 	render () {

@@ -100,7 +100,7 @@ android {
     defaultConfig {
         applicationId "com.insanityradio.insanityradio"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 25
         versionCode 20
         versionName "2.0"
         ndk {

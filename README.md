@@ -46,7 +46,7 @@ Finally, build and sign the APK.
 
 First, build the JavaScript bundle
 
-`npx react-native bundle --platform ios --dev false --bundle-output ios/com.insanityradio.player_v2/main.jsbundle`
+`npx react-native bundle --platform ios --dev false --bundle-output ios/com.insanityradio.player_v2/main.jsbundle --entry-file index.js`
 
 Next, edit `AppDelegate.m`. You must swap over comments on the lines starting `jsCodeLocation = `, such that the bottom one is uncommented. 
 
