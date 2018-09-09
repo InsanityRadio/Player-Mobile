@@ -16,7 +16,54 @@ class NoFloatActionButton extends ActionButton {
 
 }
 
-export default class PlayerControls extends React.Component {
+export class PlayerControlsShort extends React.Component {
+
+	getPlayerState () {
+		return this.props.playerState || {
+			playing: false,
+			paused: false,
+			buffering: true
+		}
+	}
+
+	render () {
+
+		let icon = Icons.play;
+		let state = this.getPlayerState();
+
+		if (state.playing && !state.paused) {
+			icon = Icons.pause;
+		} else if (state.buffering) {
+			icon = Icons.ellipsisH;
+		}
+
+		return (
+			<View style={{ marginRight: 0, height: '100%' }}>
+				<View style={{ alignItems: 'center', flexDirection: 'row', height: '100%' }}>
+
+					<View style={{ flex: 1 }}></View>
+
+					<NoFloatActionButton
+						toolbar=""
+						onPress={ this.props.onStop.bind(this) }
+						style={{ flex: 1, marginRight: 10, position: 'inherit' }}
+						icon={ <FontAwesome style={{ fontSize: 24, color: '#000' }}>{ Icons.arrowLeft }</FontAwesome> } />
+
+					<NoFloatActionButton
+						toolbar=""
+
+						onPress={ this.props.onPlay.bind(this) }
+
+						style={{ flex: 1, position: 'inherit' }}
+						icon={ <FontAwesome style={{ fontSize: 24, color: '#000' }}>{ icon }</FontAwesome> } />
+				</View>
+			</View>
+		)
+	}
+
+}
+
+export class PlayerControls extends React.Component {
 
 	getPlayerState () {
 		return this.props.playerState || {
@@ -73,7 +120,6 @@ export default class PlayerControls extends React.Component {
 						</View>
 
 						<View style={{ flex: 1 }}>
-
 						</View>
 
 						<View style={{ marginRight: 0 }}>
@@ -102,4 +148,10 @@ export default class PlayerControls extends React.Component {
 		);
 	}
 
+}
+
+
+export default {
+	PlayerControlsShort,
+	PlayerControls
 }

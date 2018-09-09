@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, Image, View, ScrollView, Animated, StatusBar } from 'react-native';
 import { COLOR, ThemeProvider, Toolbar } from 'react-native-material-ui';
+import { ReparentableDestination } from 'rn-reparentable';
 
 import Container from './Container';
 import PlayerMain from './PlayerMain';
@@ -53,6 +54,7 @@ export default class Main extends React.Component {
 
 		return (
 			<Container>
+				<ReparentableDestination name="fullscreenInject" />
 				<Toolbar
 					leftElement="menu"
 					style={{ container: { height: 60 }}}
@@ -68,7 +70,7 @@ export default class Main extends React.Component {
 					onScroll={ Animated.event(
 						[{ nativeEvent: { contentOffset: { y: this.scrollY }}}]
 					) }>
-					<View style={{ marginTop: 300 }}>
+					<View style={{ marginTop: this.state.player ? 350 : 300 }}>
 						<ScheduleMain />
 					</View>
 				</ScrollView>

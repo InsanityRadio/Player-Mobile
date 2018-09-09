@@ -1,4 +1,8 @@
 rootProject.name = 'com.insanityradio.player_v2'
+include ':rn-reparentable'
+project(':rn-reparentable').projectDir = new File(rootProject.projectDir, '../node_modules/rn-reparentable/android/app')
+include ':react-native-orientation'
+project(':react-native-orientation').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-orientation/android')
 include ':react-native-audio-streamer'
 project(':react-native-audio-streamer').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-audio-streamer/android')
 include ':react-native-music-control'
@@ -9,8 +13,6 @@ include ':react-native-eventsource'
 project(':react-native-eventsource').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-eventsource/android')
 include ':react-native-vector-icons'
 project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
-include ':react-native-track-player'
-project(':react-native-track-player').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-track-player/android')
 include ':react-native-svg'
 project(':react-native-svg').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-svg/android')
 

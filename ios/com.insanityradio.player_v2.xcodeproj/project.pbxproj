@@ -59,10 +59,14 @@
 		D88C3852A8D346E7BD88BA01 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EC6F1C5C5F345678390885D /* OpenSans-Regular.ttf */; };
 		DA19B8621F874EC080E285CB /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C4A5DD5BAA94C268B306652 /* Foundation.ttf */; };
 		E3D11CADD54843459C4C73F2 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF2494345EAC4B5A8990A95B /* Zocial.ttf */; };
-		EA5FEE89429C4806B1B6CC1F /* libRNTrackPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7934B4C912C148CABADA274D /* libRNTrackPlayer.a */; };
 		91C30EB13DB0480E99CCB8E3 /* libMusicControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A73EB35CBC38483587A88B0D /* libMusicControl.a */; };
 		135628B359C54057BA9D6F5D /* libMusicControl-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1CB1EDA1EE4FDF93F21642 /* libMusicControl-tvOS.a */; };
 		1C5C7B9B312F4A9F8A4CF6E4 /* libRNAudioStreamer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8106A67C092B4AE585527865 /* libRNAudioStreamer.a */; };
+		9E57BA49AD51497B85056ED3 /* libRCTOrientation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF5A6183D5441BA8893605 /* libRCTOrientation.a */; };
+		299B443AC163405997322B76 /* rnReparentable.app in Resources */ = {isa = PBXBuildFile; fileRef = 25FE3F412E144230B51A82C2 /* rnReparentable.app */; };
+		C63E1F1317924F8595AC7CEC /* rnReparentableTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 4F7A41E6E4794F52995E91E9 /* rnReparentableTests.xctest */; };
+		EA91854F717A4DE8820D143A /* rnReparentable-tvOS.app in Resources */ = {isa = PBXBuildFile; fileRef = DC5BB51242594C8CAFAFD936 /* rnReparentable-tvOS.app */; };
+		961926C697844D1C925604C0 /* rnReparentable-tvOSTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = E0D4086589E1455DB601AE37 /* rnReparentable-tvOSTests.xctest */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -353,13 +357,6 @@
 			remoteGlobalIDString = 94DDAC5C1F3D024300EED511;
 			remoteInfo = "RNSVG-tvOS";
 		};
-		7D239DA420BA0A8B00D5D823 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C411BA68DCBC4A329EC166C0 /* RNTrackPlayer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9B0E28291F07D76F00B71D2A;
-			remoteInfo = RNTrackPlayer;
-		};
 		7D239DA720BA0A8B00D5D823 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B568263CE2DF424F9955D831 /* RNVectorIcons.xcodeproj */;
@@ -417,7 +414,6 @@
 		5EC6F1C5C5F345678390885D /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		77E72DD8D892483BBF7F79A3 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
-		7934B4C912C148CABADA274D /* libRNTrackPlayer.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNTrackPlayer.a; sourceTree = "<group>"; };
 		7D0B3BE920BAC93A00CDC880 /* com.insanityradio.player_v2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "com.insanityradio.player_v2-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D0B3BEA20BAC93A00CDC880 /* com.insanityradio.player_v2Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "com.insanityradio.player_v2Tests-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D0B3BEB20BAC93A00CDC880 /* com.insanityradio.player_v2-tvOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "com.insanityradio.player_v2-tvOS-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -429,7 +425,6 @@
 		B074816922E9476EA32716EB /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 		B568263CE2DF424F9955D831 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		C3189897C396440995C8A119 /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "JosefinSans-Bold.ttf"; path = "../assets/fonts/JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
-		C411BA68DCBC4A329EC166C0 /* RNTrackPlayer.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNTrackPlayer.xcodeproj; path = "../node_modules/react-native-track-player/ios/RNTrackPlayer.xcodeproj"; sourceTree = "<group>"; };
 		D25E0D005C0346D99C271FE0 /* libRCTVideo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTVideo.a; sourceTree = "<group>"; };
 		D3F9DD3F1CE0415C8ABA0FDE /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		E1B0F00A757743ABB9D7481A /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
@@ -443,6 +438,13 @@
 		4C1CB1EDA1EE4FDF93F21642 /* libMusicControl-tvOS.a */ = {isa = PBXFileReference; name = "libMusicControl-tvOS.a"; path = "libMusicControl-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		C639A2B78CD34D898F40D48C /* RNAudioStreamer.xcodeproj */ = {isa = PBXFileReference; name = "RNAudioStreamer.xcodeproj"; path = "../node_modules/react-native-audio-streamer/ios/RNAudioStreamer.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		8106A67C092B4AE585527865 /* libRNAudioStreamer.a */ = {isa = PBXFileReference; name = "libRNAudioStreamer.a"; path = "libRNAudioStreamer.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		87DC30B6D0B44E858722A8DF /* RCTOrientation.xcodeproj */ = {isa = PBXFileReference; name = "RCTOrientation.xcodeproj"; path = "../node_modules/react-native-orientation/iOS/RCTOrientation.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		FAFF5A6183D5441BA8893605 /* libRCTOrientation.a */ = {isa = PBXFileReference; name = "libRCTOrientation.a"; path = "libRCTOrientation.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		A3DCDAF1861C4578A21BD05D /* rnReparentable.xcodeproj */ = {isa = PBXFileReference; name = "rnReparentable.xcodeproj"; path = "../node_modules/rn-reparentable/ios/rnReparentable.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		25FE3F412E144230B51A82C2 /* rnReparentable.app */ = {isa = PBXFileReference; name = "rnReparentable.app"; path = "rnReparentable.app"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.application; explicitFileType = undefined; includeInIndex = 0; };
+		4F7A41E6E4794F52995E91E9 /* rnReparentableTests.xctest */ = {isa = PBXFileReference; name = "rnReparentableTests.xctest"; path = "rnReparentableTests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
+		DC5BB51242594C8CAFAFD936 /* rnReparentable-tvOS.app */ = {isa = PBXFileReference; name = "rnReparentable-tvOS.app"; path = "rnReparentable-tvOS.app"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.application; explicitFileType = undefined; includeInIndex = 0; };
+		E0D4086589E1455DB601AE37 /* rnReparentable-tvOSTests.xctest */ = {isa = PBXFileReference; name = "rnReparentable-tvOSTests.xctest"; path = "rnReparentable-tvOSTests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -472,11 +474,13 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				2E771B78C9944DCC8C80E9F1 /* libRNSVG.a in Frameworks */,
-				EA5FEE89429C4806B1B6CC1F /* libRNTrackPlayer.a in Frameworks */,
 				AD9B3FB91BBE4F3CB2FAE057 /* libRNVectorIcons.a in Frameworks */,
 				CD0C004D43A5463C9E40ECDB /* libRCTVideo.a in Frameworks */,
 				91C30EB13DB0480E99CCB8E3 /* libMusicControl.a in Frameworks */,
 				1C5C7B9B312F4A9F8A4CF6E4 /* libRNAudioStreamer.a in Frameworks */,
+				9E57BA49AD51497B85056ED3 /* libRCTOrientation.a in Frameworks */,
+				299B443AC163405997322B76 /* rnReparentable.app in Resources */,
+				C63E1F1317924F8595AC7CEC /* rnReparentableTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +498,10 @@
 				2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */,
 				11B8F6F0875F4E6E9F4F1D8D /* libRNSVG-tvOS.a in Frameworks */,
 				135628B359C54057BA9D6F5D /* libMusicControl-tvOS.a in Frameworks */,
+				3858DFAB24DF475EA10BC71C /* rnReparentable-tvOS.app in Resources */,
+				98C7CE19435F4D20896C29F0 /* rnReparentable-tvOSTests.xctest in Resources */,
+				EA91854F717A4DE8820D143A /* rnReparentable-tvOS.app in Resources */,
+				961926C697844D1C925604C0 /* rnReparentable-tvOSTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,14 +709,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7D239D7420BA0A8A00D5D823 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7D239DA520BA0A8B00D5D823 /* libRNTrackPlayer.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		7D239D7620BA0A8A00D5D823 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -733,11 +733,12 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				B074816922E9476EA32716EB /* RNSVG.xcodeproj */,
-				C411BA68DCBC4A329EC166C0 /* RNTrackPlayer.xcodeproj */,
 				B568263CE2DF424F9955D831 /* RNVectorIcons.xcodeproj */,
 				3E4D9A4904244EC5B71E5032 /* RCTVideo.xcodeproj */,
 				0FB8032AC37F416BA2C5DABB /* MusicControl.xcodeproj */,
 				C639A2B78CD34D898F40D48C /* RNAudioStreamer.xcodeproj */,
+				87DC30B6D0B44E858722A8DF /* RCTOrientation.xcodeproj */,
+				A3DCDAF1861C4578A21BD05D /* rnReparentable.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -968,10 +969,6 @@
 				{
 					ProductGroup = 7D239D7220BA0A8A00D5D823 /* Products */;
 					ProjectRef = B074816922E9476EA32716EB /* RNSVG.xcodeproj */;
-				},
-				{
-					ProductGroup = 7D239D7420BA0A8A00D5D823 /* Products */;
-					ProjectRef = C411BA68DCBC4A329EC166C0 /* RNTrackPlayer.xcodeproj */;
 				},
 				{
 					ProductGroup = 7D239D7620BA0A8A00D5D823 /* Products */;
@@ -1262,13 +1259,6 @@
 			remoteRef = 7D239DA120BA0A8B00D5D823 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7D239DA520BA0A8B00D5D823 /* libRNTrackPlayer.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNTrackPlayer.a;
-			remoteRef = 7D239DA420BA0A8B00D5D823 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		7D239DA820BA0A8B00D5D823 /* libRNVectorIcons.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1452,23 +1442,18 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
+					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
+					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = com.insanityradio.player_v2Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1497,23 +1482,18 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
+					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
+					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = com.insanityradio.player_v2Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1541,11 +1521,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
+					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
+					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = com.insanityradio.player_v2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1572,11 +1553,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
+					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
+					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = com.insanityradio.player_v2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1609,22 +1591,17 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
+					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
+					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = "com.insanityradio.player_v2-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1662,22 +1639,17 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
+					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
+					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = "com.insanityradio.player_v2-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1714,22 +1686,17 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
+					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
+					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = "com.insanityradio.player_v2-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1767,22 +1734,17 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-svg/ios/**",
-					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
+					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
+					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = "com.insanityradio.player_v2-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
