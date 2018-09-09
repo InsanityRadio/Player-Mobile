@@ -63,10 +63,6 @@
 		135628B359C54057BA9D6F5D /* libMusicControl-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1CB1EDA1EE4FDF93F21642 /* libMusicControl-tvOS.a */; };
 		1C5C7B9B312F4A9F8A4CF6E4 /* libRNAudioStreamer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8106A67C092B4AE585527865 /* libRNAudioStreamer.a */; };
 		9E57BA49AD51497B85056ED3 /* libRCTOrientation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF5A6183D5441BA8893605 /* libRCTOrientation.a */; };
-		299B443AC163405997322B76 /* rnReparentable.app in Resources */ = {isa = PBXBuildFile; fileRef = 25FE3F412E144230B51A82C2 /* rnReparentable.app */; };
-		C63E1F1317924F8595AC7CEC /* rnReparentableTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 4F7A41E6E4794F52995E91E9 /* rnReparentableTests.xctest */; };
-		EA91854F717A4DE8820D143A /* rnReparentable-tvOS.app in Resources */ = {isa = PBXBuildFile; fileRef = DC5BB51242594C8CAFAFD936 /* rnReparentable-tvOS.app */; };
-		961926C697844D1C925604C0 /* rnReparentable-tvOSTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = E0D4086589E1455DB601AE37 /* rnReparentable-tvOSTests.xctest */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -440,11 +436,6 @@
 		8106A67C092B4AE585527865 /* libRNAudioStreamer.a */ = {isa = PBXFileReference; name = "libRNAudioStreamer.a"; path = "libRNAudioStreamer.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		87DC30B6D0B44E858722A8DF /* RCTOrientation.xcodeproj */ = {isa = PBXFileReference; name = "RCTOrientation.xcodeproj"; path = "../node_modules/react-native-orientation/iOS/RCTOrientation.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		FAFF5A6183D5441BA8893605 /* libRCTOrientation.a */ = {isa = PBXFileReference; name = "libRCTOrientation.a"; path = "libRCTOrientation.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		A3DCDAF1861C4578A21BD05D /* rnReparentable.xcodeproj */ = {isa = PBXFileReference; name = "rnReparentable.xcodeproj"; path = "../node_modules/rn-reparentable/ios/rnReparentable.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		25FE3F412E144230B51A82C2 /* rnReparentable.app */ = {isa = PBXFileReference; name = "rnReparentable.app"; path = "rnReparentable.app"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.application; explicitFileType = undefined; includeInIndex = 0; };
-		4F7A41E6E4794F52995E91E9 /* rnReparentableTests.xctest */ = {isa = PBXFileReference; name = "rnReparentableTests.xctest"; path = "rnReparentableTests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
-		DC5BB51242594C8CAFAFD936 /* rnReparentable-tvOS.app */ = {isa = PBXFileReference; name = "rnReparentable-tvOS.app"; path = "rnReparentable-tvOS.app"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.application; explicitFileType = undefined; includeInIndex = 0; };
-		E0D4086589E1455DB601AE37 /* rnReparentable-tvOSTests.xctest */ = {isa = PBXFileReference; name = "rnReparentable-tvOSTests.xctest"; path = "rnReparentable-tvOSTests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -479,8 +470,6 @@
 				91C30EB13DB0480E99CCB8E3 /* libMusicControl.a in Frameworks */,
 				1C5C7B9B312F4A9F8A4CF6E4 /* libRNAudioStreamer.a in Frameworks */,
 				9E57BA49AD51497B85056ED3 /* libRCTOrientation.a in Frameworks */,
-				299B443AC163405997322B76 /* rnReparentable.app in Resources */,
-				C63E1F1317924F8595AC7CEC /* rnReparentableTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,7 +727,6 @@
 				0FB8032AC37F416BA2C5DABB /* MusicControl.xcodeproj */,
 				C639A2B78CD34D898F40D48C /* RNAudioStreamer.xcodeproj */,
 				87DC30B6D0B44E858722A8DF /* RCTOrientation.xcodeproj */,
-				A3DCDAF1861C4578A21BD05D /* rnReparentable.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1447,17 +1435,12 @@
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
-					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = com.insanityradio.player_v2Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1487,17 +1470,12 @@
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
-					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = com.insanityradio.player_v2Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1526,7 +1504,6 @@
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
-					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = com.insanityradio.player_v2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1558,7 +1535,6 @@
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
-					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = com.insanityradio.player_v2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1596,16 +1572,11 @@
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
-					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = "com.insanityradio.player_v2-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1644,16 +1615,11 @@
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
-					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = "com.insanityradio.player_v2-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1691,16 +1657,11 @@
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
-					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = "com.insanityradio.player_v2-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1739,16 +1700,11 @@
 					"$(SRCROOT)/../node_modules/react-native-music-control/ios",
 					"$(SRCROOT)/../node_modules/react-native-audio-streamer/ios/RNAudioStreamer/**",
 					"$(SRCROOT)/../node_modules/react-native-orientation/iOS/RCTOrientation/**",
-					"$(SRCROOT)/../node_modules/rn-reparentable/ios/**",
 				);
 				INFOPLIST_FILE = "com.insanityradio.player_v2-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

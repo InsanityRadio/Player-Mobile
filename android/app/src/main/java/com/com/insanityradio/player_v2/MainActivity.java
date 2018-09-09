@@ -14,4 +14,12 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "com.insanityradio.player_v2";
     }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Intent intent = new Intent("onConfigurationChanged");
+        intent.putExtra("newConfig", newConfig);
+        this.sendBroadcast(intent);
+    }
 }

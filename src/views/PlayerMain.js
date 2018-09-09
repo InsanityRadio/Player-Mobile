@@ -1,22 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, Image, View, StatusBar, Animated, Alert, TouchableWithoutFeedback } from 'react-native';
 import { COLOR, ThemeProvider, Toolbar } from 'react-native-material-ui';
+import Video from 'react-native-video';
+import Orientation from 'react-native-orientation';
 
 import Container from './Container';
 import { PlayerControls, PlayerControlsShort } from './PlayerControls';
 import PlayerMeta from './PlayerMeta';
-import Video from 'react-native-video';
-import { ReparentableOrigin } from 'rn-reparentable';
-
-import Orientation from 'react-native-orientation';
 
 import config from '../config';
 
 class VideoPlayerControls extends React.Component {
-
-	/* props: {
-	
-	} */
 
 	state = {
 		visible: true
@@ -31,6 +25,11 @@ class VideoPlayerControls extends React.Component {
 			this.showControls();
 		}
 
+	}
+
+	// Prevent memory leak
+	componentWillUnmount () {
+		clearTimeout(this.timeToHideControls);
 	}
 
 	showControls () {
@@ -95,6 +94,14 @@ class PlayerWrap extends React.Component {
 			buffering: true,
 			paused: false
 		}
+	}
+
+	componentDidMount () {
+		Orientation.unlockAllOrientations();
+	}
+
+	componentWillUnmount () {
+		Orientation.lockToPortrait();
 	}
 
 	setPlayer (player) {
@@ -176,11 +183,12 @@ class PlayerWrap extends React.Component {
 			bottom: 0
 		}
 
+		let fullscreen = this.props.fullscreen;
+
 		return (
 			<View style={ view }>
 				<Video
-					videoStyle={{ height: this.props.height }}
-					style={{ height: this.props.height }}
+					style={{ height: fullscreen ? '100%' : this.props.height }}
 					source={ this.props.source }
 					poster="https://insanityradio.com/res/slate.png"
 					ref={ (a) => this.setPlayer(a) }
@@ -228,14 +236,20 @@ export default class PlayerMain extends React.Component {
 			"Video is only currently available in HD. This won't work unless you're on fast 4G or Wi-Fi. If on 4G, unless you're on an unlimited data plan, this will use a very large chunk of your allowance.",
 			[
 				{ text: 'Cancel', onPress: () => this.stopVideo(), style: 'cancel' },
-				{ text: 'Watch', onPress: () => this.setState({ video: true })}
+				{ text: 'Watch', onPress: () => this.startVideo() }
 			],
 			{ cancelable: true }
 		)
 	}
 
+	startVideo () {
+		this.setState({ video: true });
+		this.props.onVideo(true);
+	}
+
 	stopVideo () {
 		this.setState({ video: false });
+		this.props.onVideo(false);
 	}
 
 	componentWillUpdate (newProps, newState) {
@@ -259,18 +273,30 @@ export default class PlayerMain extends React.Component {
 	renderVideo () {
 
 		let playerState = this.state.playerState;
+		let fullscreen = this.props.fullscreen;
+
+		let style = fullscreen ? {
+			position: 'absolute',
+			top: 0,
+			left: 0,
+			right: 0,
+			bottom: 0,
+			backgroundColor: '#000000'
+		} : {
+			height: 350,
+			backgroundColor: '#000000'
+		}
 
 		return (
-			<Animated.View style={{ height: 350, backgroundColor: '#000000' }}>
-				<View style={{ height: 286, backgroundColor: '#000000' }}>
+			<Animated.View style={ style }>
+				<View style={{ height: fullscreen ? '100%' : 286, backgroundColor: '#000000' }}>
 
-					<ReparentableOrigin destination={ this.state.shouldMove ? 'fullscreenInject' : null }>
-						<PlayerWrap
-							height={ 286 }
-							onStop={ () => this.stopVideo() }
-							onStateChange={ (state) => this.onVideoStateChange(state) }
-							source={{ uri: this.URL }} />
-					</ReparentableOrigin>
+					<PlayerWrap
+						height={ 286 }
+						fullscreen= { fullscreen }
+						onStop={ () => this.stopVideo() }
+						onStateChange={ (state) => this.onVideoStateChange(state) }
+						source={{ uri: this.URL }} />
 
 				</View>
 				<PlayerMeta { ...this.props } />

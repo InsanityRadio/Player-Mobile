@@ -150,7 +150,6 @@ android {
 }
 
 dependencies {
-    compile project(':rn-reparentable')
     compile project(':react-native-orientation')
     compile project(':react-native-audio-streamer')
     compile project(':react-native-music-control')

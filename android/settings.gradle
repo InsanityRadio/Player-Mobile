@@ -1,6 +1,4 @@
 rootProject.name = 'com.insanityradio.player_v2'
-include ':rn-reparentable'
-project(':rn-reparentable').projectDir = new File(rootProject.projectDir, '../node_modules/rn-reparentable/android/app')
 include ':react-native-orientation'
 project(':react-native-orientation').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-orientation/android')
 include ':react-native-audio-streamer'

@@ -22,7 +22,7 @@
     "react": "16.3.1",
     "react-moment": "^0.7.9",
     "react-native": "~0.55.2",
-    "react-native-audio-streamer": "file:src/react-native-audio-streamer",
+    "react-native-audio-streamer": "git+https://github.com/InsanityRadio/react-native-audio-streamer.git",
     "react-native-fontawesome": "^5.7.0",
     "react-native-material-ui": "^1.22.3",
     "react-native-music-control": "^0.5.5",
@@ -30,8 +30,7 @@
     "react-native-svg": "^6.3.1",
     "react-native-vector-icons": "^4.6.0",
     "react-native-video": "^2.0.0",
-    "react-native-video-controls": "^2.2.1",
-    "rn-reparentable": "git+https://github.com/mfrachet/rn-reparentable.git"
+    "react-native-video-controls": "^2.2.1"
   },
   "rnpm": {
     "assets": [
