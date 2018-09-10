@@ -2,11 +2,14 @@ import React from 'react';
 import { Animated, StyleSheet, Text, Image, ImageBackground, View, StatusBar, AsyncStorage } from 'react-native';
 import { COLOR, ThemeProvider, Toolbar, ActionButton, ListItem } from 'react-native-material-ui';
 
+import config from '../config';
+
+import momentEnGB from 'moment/locale/en-gb';
 import Moment from 'react-moment';
 
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 
-Moment.globalLocale = 'en-GB';
+Moment.globalLocale = 'en-gb';
 Moment.globalFormat = 'ddd D MMM';
 
 export default class ScheduleMain extends React.Component {
@@ -52,7 +55,7 @@ export default class ScheduleMain extends React.Component {
 	}
 
 	loadSchedule () {
-		fetch('https://insanityradio.com/listen/load_status.json?version=1.2')
+		fetch(config.getURLForSchedule())
 		.then((data) => data.json())
 		.then((data) => this.setSchedule(data.schedule))
 		.then((data) => this.scheduleLoaded())

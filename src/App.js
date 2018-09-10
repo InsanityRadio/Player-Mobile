@@ -4,6 +4,8 @@ import { COLOR, ThemeProvider } from 'react-native-material-ui';
 
 import Main from './views/Main';
 
+import config from './config';
+
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { YellowBox } from 'react-native';
 
@@ -64,6 +66,11 @@ export default class App extends React.Component {
 
 	state = {
 		ready: 0
+	}
+
+	componentWillMount () {
+		this.pushLoad();
+		config.loadConfig().then((a) => this.popLoad());
 	}
 	
 	componentDidMount () {
