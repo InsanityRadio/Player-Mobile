@@ -50,6 +50,10 @@
 		7D0B3BEF20BAC93B00CDC880 /* dummy2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0B3BED20BAC93B00CDC880 /* dummy2.swift */; };
 		7D0B3BF020BAC93B00CDC880 /* dummy2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0B3BED20BAC93B00CDC880 /* dummy2.swift */; };
 		7D0B3BF120BAC93B00CDC880 /* dummy2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0B3BED20BAC93B00CDC880 /* dummy2.swift */; };
+		7D6FD3FA214687C30001713E /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
+		7D6FD3FB214688E80001713E /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
+		7D6FD3FD21468ACD0001713E /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 7D6FD3FC21468ACD0001713E /* assets */; };
+		7D6FD3FE21468ACD0001713E /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 7D6FD3FC21468ACD0001713E /* assets */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		89EBDCC622CF4DA4A20033A6 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1B0F00A757743ABB9D7481A /* Feather.ttf */; };
 		8DD5FD1CED124609BB3359D5 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83E7C53AA689431FB4A278BD /* EvilIcons.ttf */; };
@@ -558,6 +562,7 @@
 		7D0B3BEB20BAC93A00CDC880 /* com.insanityradio.player_v2-tvOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "com.insanityradio.player_v2-tvOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D0B3BEC20BAC93A00CDC880 /* com.insanityradio.player_v2-tvOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "com.insanityradio.player_v2-tvOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D0B3BED20BAC93B00CDC880 /* dummy2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy2.swift; sourceTree = "<group>"; };
+		7D6FD3FC21468ACD0001713E /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = com.insanityradio.player_v2/assets; sourceTree = "<group>"; };
 		7DCA16222145C7750061C1FC /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		8106A67C092B4AE585527865 /* libRNAudioStreamer.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNAudioStreamer.a; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -732,6 +737,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				7D6FD3FC21468ACD0001713E /* assets */,
 			);
 			name = com.insanityradio.player_v2;
 			sourceTree = "<group>";
@@ -1631,6 +1637,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				70393790B5EC4236AF996226 /* FontAwesome.ttf in Resources */,
+				7D6FD3FD21468ACD0001713E /* assets in Resources */,
 				D88C3852A8D346E7BD88BA01 /* OpenSans-Regular.ttf in Resources */,
 				2A1BFCEFA69948D3833B2F86 /* Entypo.ttf in Resources */,
 				8DD5FD1CED124609BB3359D5 /* EvilIcons.ttf in Resources */,
@@ -1638,6 +1645,7 @@
 				DA19B8621F874EC080E285CB /* Foundation.ttf in Resources */,
 				AA9E31E320EA48A48CC35293 /* Ionicons.ttf in Resources */,
 				516903FE74B342C7A8FB4455 /* MaterialCommunityIcons.ttf in Resources */,
+				7D6FD3FA214687C30001713E /* main.jsbundle in Resources */,
 				C0100A70203A4CE2B4A3A998 /* MaterialIcons.ttf in Resources */,
 				12044FF306ED47D1894D464C /* Octicons.ttf in Resources */,
 				485175B2CC6148C28562B530 /* SimpleLineIcons.ttf in Resources */,
@@ -1651,7 +1659,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D6FD3FE21468ACD0001713E /* assets in Resources */,
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
+				7D6FD3FB214688E80001713E /* main.jsbundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1833,6 +1843,7 @@
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1855,6 +1866,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.insanityradio.insanityradio;
 				PRODUCT_NAME = com.insanityradio.player_v2;
 				SWIFT_OBJC_BRIDGING_HEADER = "com.insanityradio.player_v2-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1866,6 +1878,7 @@
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1886,6 +1899,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.insanityradio.insanityradio;
 				PRODUCT_NAME = com.insanityradio.player_v2;
 				SWIFT_OBJC_BRIDGING_HEADER = "com.insanityradio.player_v2-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

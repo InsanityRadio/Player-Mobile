@@ -66,6 +66,7 @@ export default class Player extends React.Component {
 
 	_statusChanged(state) {
 
+		console.log('Playback state change', state)
 		this.setState({
 			stateID: state,
 			playing: state == 'PLAYING',
@@ -90,12 +91,10 @@ export default class Player extends React.Component {
 
 	go () {
 
-		let ios = 'http://scdnc.insanityradio.com/dash/hls/insanity/index.m3u8'; //'https://stream.cor.insanityradio.com/insanity128.aac',
-			android = 'http://scdnc.insanityradio.com/dash/dash/insanity/index.mpd'; //'https://stream.cor.insanityradio.com/insanity/hls/insanity.m3u8';
+		let url = config.getURLForAudio();
+		console.log('Loading audio stream: ', url);
 
-		let url = Platform.OS != 'ios' ? ios : android;
-
-		RNAudioStreamer.setUrl(config.getURLForAudio());
+		RNAudioStreamer.setUrl(url);
 		RNAudioStreamer.play();
 
 	}
