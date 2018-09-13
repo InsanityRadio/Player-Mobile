@@ -6,6 +6,8 @@ import config from './config';
 
 export default class Player extends React.Component {
 
+	_onStateChange = () => null;
+
 	constructor (props) {
 		super(props);
 		this.state = {
@@ -16,38 +18,14 @@ export default class Player extends React.Component {
 
 	componentWillMount () {
 
-		this.updateState(0)
-
-		this.subscription = DeviceEventEmitter.addListener('RNAudioStreamerStatusChanged', this._statusChanged.bind(this))
+		this.subscription = DeviceEventEmitter.addListener('RNAudioStreamerStatusChanged', this.onStatusChanged.bind(this))
 
 		RNAudioStreamer.status((err, status)=>{
-			this._statusChanged(status);
+			this.onStatusChanged(status);
 			if (err) console.warn(err);
 		})
 
 		this.go();
-
-		/*TrackPlayer.setupPlayer().then(async () => {
-
-			TrackPlayer.registerEventHandler(async (data) => {
-
-				switch(data.type) {
-					case 'playback-state': return this.updateState(await TrackPlayer.getState())
-					case 'remote-play': return this.go();
-					case 'remote-stop': return TrackPlayer.stop();
-					case 'remote-duck': return data.ducking ? TrackPlayer.stop() : this.go();
-					case 'playback-queue-ended': return this.go();
-					default: break;
-				}
-			})
-
-			TrackPlayer.updateOptions({
-				capabilities: [TrackPlayer.CAPABILITY_PLAY, TrackPlayer.CAPABILITY_STOP]
-			})
-
-			this.go();
-
-		}); */
 
 	}
 
@@ -55,16 +33,7 @@ export default class Player extends React.Component {
 		this.stop();
 	}
 
-	updateState (state) {
-		return;
-		this.setState({
-			stateID: state,
-			playing: state == TrackPlayer.STATE_PLAYING,
-			buffering: state == TrackPlayer.STATE_BUFFERING
-		}, () => this.props.onStateChange(this.state));
-	}
-
-	_statusChanged(state) {
+	onStatusChanged(state) {
 
 		console.log('Playback state change', state)
 		this.setState({
@@ -85,6 +54,8 @@ export default class Player extends React.Component {
 		}
 
 		this.props.onStateChange(this.state);
+
+		// Nasty hack alert! 
 		this._onStateChange(this.state);
 
 	}
@@ -115,16 +86,13 @@ export default class Player extends React.Component {
 	}
 
 	registerControl (musicControl) {
+
 		this.musicControl = musicControl;
-		musicControl.on('play', () => {
-			this.go();
-		})
-		musicControl.on('stop', () => {
-			this.stop();
-		})
-		musicControl.on('pause', () => {
-			this.stop();
-		})
+
+		musicControl.on('play', () => this.go());
+		musicControl.on('stop', () => this.stop());
+		musicControl.on('pause', () => this.stop());
+
 	}
 
 	render () {
