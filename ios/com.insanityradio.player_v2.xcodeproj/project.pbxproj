@@ -344,6 +344,13 @@
 			remoteGlobalIDString = 641E28441F0EEC8500443AF6;
 			remoteInfo = "RCTVideo-tvOS";
 		};
+		7D1D629721492B8C00CEE9B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D1D625921492B8C00CEE9B6 /* RNAudioStreamer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4EA3C7F71DED6DA700FF8C38;
+			remoteInfo = RNAudioStreamer;
+		};
 		7D239D9F20BA0A8B00D5D823 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B074816922E9476EA32716EB /* RNSVG.xcodeproj */;
@@ -371,13 +378,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RCTOrientation;
-		};
-		7D888A782145C2AB00F813EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C639A2B78CD34D898F40D48C /* RNAudioStreamer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4EA3C7F71DED6DA700FF8C38;
-			remoteInfo = RNAudioStreamer;
 		};
 		7D888A7E2145C2AB00F813EA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -562,6 +562,7 @@
 		7D0B3BEB20BAC93A00CDC880 /* com.insanityradio.player_v2-tvOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "com.insanityradio.player_v2-tvOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D0B3BEC20BAC93A00CDC880 /* com.insanityradio.player_v2-tvOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "com.insanityradio.player_v2-tvOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D0B3BED20BAC93B00CDC880 /* dummy2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy2.swift; sourceTree = "<group>"; };
+		7D1D625921492B8C00CEE9B6 /* RNAudioStreamer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNAudioStreamer.xcodeproj; path = "../../../../Code/react-native-audio-streamer/ios/RNAudioStreamer.xcodeproj"; sourceTree = "<group>"; };
 		7D6FD3FC21468ACD0001713E /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = com.insanityradio.player_v2/assets; sourceTree = "<group>"; };
 		7DCA16222145C7750061C1FC /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		8106A67C092B4AE585527865 /* libRNAudioStreamer.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNAudioStreamer.a; sourceTree = "<group>"; };
@@ -573,7 +574,7 @@
 		B074816922E9476EA32716EB /* RNSVG.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSVG.xcodeproj; path = "../node_modules/react-native-svg/ios/RNSVG.xcodeproj"; sourceTree = "<group>"; };
 		B568263CE2DF424F9955D831 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		C3189897C396440995C8A119 /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "JosefinSans-Bold.ttf"; path = "../assets/fonts/JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
-		C639A2B78CD34D898F40D48C /* RNAudioStreamer.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNAudioStreamer.xcodeproj; path = "../node_modules/react-native-audio-streamer/ios/RNAudioStreamer.xcodeproj"; sourceTree = "<group>"; };
+		C639A2B78CD34D898F40D48C /* ios */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = folder; name = ios; path = "../../../../Code/react-native-audio-streamer/ios"; sourceTree = "<group>"; };
 		D25E0D005C0346D99C271FE0 /* libRCTVideo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTVideo.a; sourceTree = "<group>"; };
 		D3F9DD3F1CE0415C8ABA0FDE /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		E1B0F00A757743ABB9D7481A /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
@@ -836,6 +837,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		7D1D625A21492B8C00CEE9B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D1D629821492B8C00CEE9B6 /* libRNAudioStreamer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7D239D7220BA0A8A00D5D823 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -857,14 +866,6 @@
 			isa = PBXGroup;
 			children = (
 				7D888A762145C2AB00F813EA /* libRCTOrientation.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		7D888A722145C2AB00F813EA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7D888A792145C2AB00F813EA /* libRNAudioStreamer.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -904,6 +905,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				7D1D625921492B8C00CEE9B6 /* RNAudioStreamer.xcodeproj */,
 				7DCA16222145C7750061C1FC /* React.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -921,7 +923,7 @@
 				B568263CE2DF424F9955D831 /* RNVectorIcons.xcodeproj */,
 				3E4D9A4904244EC5B71E5032 /* RCTVideo.xcodeproj */,
 				0FB8032AC37F416BA2C5DABB /* MusicControl.xcodeproj */,
-				C639A2B78CD34D898F40D48C /* RNAudioStreamer.xcodeproj */,
+				C639A2B78CD34D898F40D48C /* ios */,
 				87DC30B6D0B44E858722A8DF /* RCTOrientation.xcodeproj */,
 			);
 			name = Libraries;
@@ -1070,6 +1072,11 @@
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 583F3QZPX7;
 						LastSwiftMigration = 920;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1163,8 +1170,8 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = 7D888A722145C2AB00F813EA /* Products */;
-					ProjectRef = C639A2B78CD34D898F40D48C /* RNAudioStreamer.xcodeproj */;
+					ProductGroup = 7D1D625A21492B8C00CEE9B6 /* Products */;
+					ProjectRef = 7D1D625921492B8C00CEE9B6 /* RNAudioStreamer.xcodeproj */;
 				},
 				{
 					ProductGroup = 7D239D7220BA0A8A00D5D823 /* Products */;
@@ -1445,6 +1452,13 @@
 			remoteRef = 7D0B3C3020BB08DE00CDC880 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		7D1D629821492B8C00CEE9B6 /* libRNAudioStreamer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNAudioStreamer.a;
+			remoteRef = 7D1D629721492B8C00CEE9B6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		7D239DA020BA0A8B00D5D823 /* libRNSVG.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1471,13 +1485,6 @@
 			fileType = archive.ar;
 			path = libRCTOrientation.a;
 			remoteRef = 7D888A752145C2AB00F813EA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7D888A792145C2AB00F813EA /* libRNAudioStreamer.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNAudioStreamer.a;
-			remoteRef = 7D888A782145C2AB00F813EA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		7D888A7F2145C2AB00F813EA /* libMusicControl.a */ = {
