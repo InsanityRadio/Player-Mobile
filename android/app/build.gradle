@@ -101,7 +101,7 @@ android {
         applicationId "com.insanityradio.insanityradio"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 20
+        versionCode 21
         versionName "2.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
