@@ -4,6 +4,8 @@ import { COLOR, ThemeProvider, Toolbar, ActionButton } from 'react-native-materi
 
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 
+import config from '../config';
+
 import Container from './Container';
 import MusicControl from 'react-native-music-control';
 
@@ -29,6 +31,7 @@ class WebSocketPlayerMetaBackend extends PlayerMetaBackend {
 
 	connect () {
 
+		// TODO: inject some sort of session resume in here
 		this.ws = new WebSocket(this.url); 
 
 		this.ws.onopen = (a) => {
@@ -81,7 +84,7 @@ class WebSocketPlayerMetaBackend extends PlayerMetaBackend {
 
 export default class PlayerMeta extends React.Component {
 
-	URL = "https://webapi.insanityradio.com/subscribe?id=1&last=1"
+	URL = config.getURLForMeta();
 
 	state = {
 		nowPlaying: {
@@ -99,11 +102,8 @@ export default class PlayerMeta extends React.Component {
 	}
 
 	componentWillMount () {
-
 		this.enableSource();
-
 		this.setupControls();
-
 	}
 
 	enableSource () {
@@ -126,7 +126,9 @@ export default class PlayerMeta extends React.Component {
 		MusicControl.enableControl('closeNotification', true, {when: 'paused'})
 
 		MusicControl.enableControl('play', true)
-		MusicControl.enableControl('pause', false)
+
+		// iOS won't show a stop button, so we can use a pause one instead
+		MusicControl.enableControl('pause', config.getNormalisedPlatform() == 'ios')
 		MusicControl.enableControl('stop', true)
 		MusicControl.enableControl('nextTrack', false)
 		MusicControl.enableControl('previousTrack', false)
@@ -163,7 +165,8 @@ export default class PlayerMeta extends React.Component {
 			})
 		}
 
-		if (this.props.playerState && this.props.playerState.playing) {
+		// If we suddenly start buffering, we should keep the WebSocket open
+		if (this.props.playerState && (this.props.playerState.playing || this.props.playerState.buffering)) {
 			this.source || console.log('State change, enabling data source')
 			this.source || this.enableSource();
 		} else {

@@ -106,17 +106,17 @@ let stationConfig = function (station) {
 	}
 
 	this.getURLForAudio = function () {
-
 		let platform = this.getNormalisedPlatform();
 		return myConfig.content.audio[platform]
-
 	}
 
 	this.getURLForVideo = function () {
-
 		let platform = this.getNormalisedPlatform();
 		return myConfig.content.video[platform]
+	}
 
+	this.getURLForMeta = function () {
+		return myConfig.content.meta;
 	}
 
 	this.getStationName = function () {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, View, StatusBar } from 'react-native';
 import { COLOR, ThemeProvider } from 'react-native-material-ui';
 
 const styles = StyleSheet.create({
@@ -11,14 +11,14 @@ const styles = StyleSheet.create({
 export default class Container extends React.Component {
 	render() {
 		return (
-			<View style={styles.container}>
+			<SafeAreaView style={styles.container}>
 				<StatusBar
 					backgroundColor="#000000"
 					translucent={ false }
 					barStyle="light-content"
 					/>
 				{ this.props.children }
-			</View>
+			</SafeAreaView>
 		);
 	}
 }

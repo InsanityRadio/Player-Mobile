@@ -74,10 +74,12 @@ export default class App extends React.Component {
 	}
 	
 	componentDidMount () {
+		console.log('App mounted')
 		BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
 	}
 
 	componentWillUnmount () {
+		console.log('App unmounting')
 		BackHandler.removeEventListener('hardwareBackPress', this.handleBackButton);
 	}
 
@@ -99,6 +101,7 @@ export default class App extends React.Component {
 
 	render() {
 		if (this.state.ready != 0) {
+			console.log('Rendered whilst unready')
 			return null;
 		}
 		return (

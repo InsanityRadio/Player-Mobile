@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, Image, View, ScrollView, Animated, StatusBar } from 'react-native';
+import { StyleSheet, Text, Image, View, ScrollView, Animated, StatusBar, SafeAreaView } from 'react-native';
 import { COLOR, ThemeProvider, Toolbar } from 'react-native-material-ui';
 import Orientation from 'react-native-orientation';
 
@@ -47,10 +47,12 @@ export default class Main extends React.Component {
 	}
 
 	componentDidMount () {
+		console.log('Main mounted')
 		Orientation.addOrientationListener(this._orientationDidChange);
 	}
 
 	componentWillUnmount () {
+		console.log('Main unmounting')
 		Orientation.removeOrientationListener(this._orientationDidChange);
 	}
 
@@ -81,7 +83,6 @@ export default class Main extends React.Component {
 		return (
 			<Container>
 				{ fullscreen || <Toolbar
-					leftElement="menu"
 					style={{ container: { height: 60 }}}
 					centerElement={
 						<Image

@@ -49,7 +49,9 @@ export default class Player extends React.Component {
 		if (this.musicControl) {
 			let s = this.musicControl;
 			s.updatePlayback({
-				state: this.state.playing ? s.STATE_PLAYING : (this.state.buffering ? s.STATE_BUFFERING : s.STATE_STOPPED)
+				state: this.state.playing ? s.STATE_PLAYING : (this.state.buffering ? s.STATE_BUFFERING : s.STATE_STOPPED),
+				// We need to set elapsedTime for iOS to work, apparently
+				elapsedTime: (Date.now() / 1000 | 0) - this.startTime
 			})
 		}
 
@@ -64,6 +66,8 @@ export default class Player extends React.Component {
 
 		let url = config.getURLForAudio();
 		console.log('Loading audio stream: ', url);
+
+		this.startTime = Date.now() / 1000 | 0;
 
 		RNAudioStreamer.setUrl(url);
 		RNAudioStreamer.play();
