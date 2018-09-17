@@ -9,6 +9,8 @@ import PlayerMain from './PlayerMain';
 import Player from '../Player';
 import ScheduleMain from './ScheduleMain';
 
+import config from '../config';
+
 const styles = StyleSheet.create({
 
 	controls: {
@@ -22,7 +24,7 @@ const styles = StyleSheet.create({
 	scrollView: {
 		flex: 1,
 		position: 'absolute',
-		top: 60,
+		top: 60 + (config.getNormalisedPlatform() == 'ios' ? 15 : 0),
 		left: 0,
 		right: 0,
 		bottom: 0

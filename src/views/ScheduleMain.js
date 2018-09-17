@@ -4,6 +4,9 @@ import { COLOR, ThemeProvider, Toolbar, ActionButton, ListItem } from 'react-nat
 
 import config from '../config';
 
+import { ObservableStorage } from '../ObservableStorage';
+let observableStorage = ObservableStorage.getInstance();
+
 import momentEnGB from 'moment/locale/en-gb';
 import Moment from 'react-moment';
 
@@ -31,7 +34,7 @@ export default class ScheduleMain extends React.Component {
 
 	componentWillMount () {
 
-		AsyncStorage.getItem('@Insanity:schedule').then((data) => {
+		observableStorage.getItem('schedule').then((data) => {
 			if (data != null) {
 
 				try {
@@ -57,19 +60,20 @@ export default class ScheduleMain extends React.Component {
 	loadSchedule () {
 		fetch(config.getURLForSchedule())
 		.then((data) => data.json())
-		.then((data) => this.setSchedule(data.schedule))
+		.then((data) => this.setSchedule(data))
 		.then((data) => this.scheduleLoaded())
-		.catch((e) => x.warn('Error loading web data!', e))
+		.catch((e) => console.warn('Error loading web data!', e))
 	}
 
-	setSchedule (schedule) {
+	setSchedule (data) {
 
 		schedule = {
-			schedule: schedule,
+			schedule: data.schedule,
 			date: Date.now()
 		}
 
-		AsyncStorage.setItem('@Insanity:schedule', JSON.stringify(schedule))
+		observableStorage.setItem('schedule', JSON.stringify(schedule))
+		observableStorage.setItem('video', JSON.stringify(data.video));
 
 		this.setState({
 			loadedSchedule: schedule

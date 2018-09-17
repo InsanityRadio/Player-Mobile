@@ -4,21 +4,27 @@ import { COLOR, ThemeProvider } from 'react-native-material-ui';
 
 const styles = StyleSheet.create({
 	container: {
+		backgroundColor: '#222222',
 		flex: 1,
 	},
 });
 
 export default class Container extends React.Component {
+
 	render() {
+
 		return (
-			<SafeAreaView style={styles.container}>
+			<View style={styles.container}>
 				<StatusBar
-					backgroundColor="#000000"
+					backgroundColor="#222222"
 					translucent={ false }
-					barStyle="light-content"
-					/>
-				{ this.props.children }
-			</SafeAreaView>
+					barStyle="light-content" />
+				<SafeAreaView style={styles.container}>
+					{ this.props.children }
+				</SafeAreaView>
+			</View>
 		);
+	
 	}
+
 }

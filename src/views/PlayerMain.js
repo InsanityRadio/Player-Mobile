@@ -8,6 +8,8 @@ import Container from './Container';
 import { PlayerControls, PlayerControlsShort } from './PlayerControls';
 import PlayerMeta from './PlayerMeta';
 
+import { withObserver } from '../ObservableStorage';
+
 import config from '../config';
 
 class VideoPlayerControls extends React.Component {
@@ -218,6 +220,8 @@ class PlayerWrap extends React.Component {
 
 }
 
+const PlayerControlsWrapped = withObserver(PlayerControls, ['video'])
+
 export default class PlayerMain extends React.Component {
 
 	state = {
@@ -313,7 +317,7 @@ export default class PlayerMain extends React.Component {
 
 		return (
 			<Animated.View>
-				<PlayerControls
+				<PlayerControlsWrapped
 					style={ this.props.styles.controls }
 					loadVideo={ this.loadVideo.bind(this) }
 					{ ...this.props } />

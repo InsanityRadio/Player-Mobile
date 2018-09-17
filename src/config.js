@@ -2,6 +2,9 @@ import { AsyncStorage, Platform } from 'react-native';
 
 let VERSION = global.VERSION = '1.2';
 
+import { ObservableStorage } from './ObservableStorage';
+let observableStorage = ObservableStorage.getInstance();
+
 let config = global.config = {
 
 	stations: [{
@@ -44,7 +47,7 @@ let stationConfig = function (station) {
 
 	this.loadConfig = function () {
 
-		return AsyncStorage.getItem('@Insanity:config').then((config) => {
+		return observableStorage.getItem('config').then((config) => {
 
 			try {
 				if (config != null && JSON.parse(config).version > 0) {
@@ -57,7 +60,7 @@ let stationConfig = function (station) {
 				}
 			} catch (e) {
 				// Did something go wrong loading our data? Delete it and use the default.
-				AsyncStorage.setItem('@Insanity:config', null);
+				observableStorage.setItem('config', null);
 				console.warn('Saved configuration is corrupt, using default')
 				myConfig.content = myConfig._content;
 			}
@@ -68,7 +71,7 @@ let stationConfig = function (station) {
 
 		})
 		.catch((e) => {
-			AsyncStorage.setItem('@Insanity:config', null);
+			observableStorage.setItem('config', null);
 			console.warn('Exception was thrown somewhere in AsyncStorage, wiping & using default')
 			myConfig.content = myConfig._content;
 			// Return allows us to continue like normal
@@ -86,7 +89,7 @@ let stationConfig = function (station) {
 
 	this.setConfig = function (config) {
 		console.log('Reloaded configuration, its version number is', config.version)
-		AsyncStorage.setItem('@Insanity:config', JSON.stringify(config))
+		observableStorage.setItem('config', JSON.stringify(config))
 	}
 
 	this.getURLForSchedule = function () {

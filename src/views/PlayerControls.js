@@ -16,7 +16,7 @@ class NoFloatActionButton extends ActionButton {
 
 }
 
-export class PlayerControlsShort extends React.Component {
+class PlayerControlsShort extends React.Component {
 
 	getPlayerState () {
 		return this.props.playerState || {
@@ -63,7 +63,7 @@ export class PlayerControlsShort extends React.Component {
 
 }
 
-export class PlayerControls extends React.Component {
+class PlayerControls extends React.Component {
 
 	getPlayerState () {
 		return this.props.playerState || {
@@ -102,7 +102,7 @@ export class PlayerControls extends React.Component {
 			outputRange: [1, 0]
 		})
 
-		let video = true;
+		let video = this.props.observed && this.props.observed.video == 'true';
 
 		return (
 			<Animated.View style={{ height: height, backgroundColor: '#C00' }}>
@@ -146,12 +146,12 @@ export class PlayerControls extends React.Component {
 				</ImageBackground>
 			</Animated.View>
 		);
+
 	}
 
 }
 
-
-export default {
+export {
 	PlayerControlsShort,
 	PlayerControls
 }

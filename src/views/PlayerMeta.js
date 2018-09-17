@@ -5,6 +5,8 @@ import { COLOR, ThemeProvider, Toolbar, ActionButton } from 'react-native-materi
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 
 import config from '../config';
+import { ObservableStorage } from '../ObservableStorage';
+let observableStorage = ObservableStorage.getInstance();
 
 import Container from './Container';
 import MusicControl from 'react-native-music-control';
@@ -154,7 +156,10 @@ export default class PlayerMeta extends React.Component {
 	}
 
 	setPlayingData (data) {
+
 		this.setState(data);
+
+		observableStorage.setItem('video', JSON.stringify(data.video));
 
 		if (this.props.playerState && this.props.playerState.playing) {
 			console.log('Updating music control data', data.nowPlaying.song)
