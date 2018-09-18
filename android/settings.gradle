@@ -6,7 +6,7 @@ project(':react-native-audio-streamer').projectDir = new File(rootProject.projec
 include ':react-native-music-control'
 project(':react-native-music-control').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-music-control/android')
 include ':react-native-video'
-project(':react-native-video').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-video/android')
+project(':react-native-video').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-video/android-exoplayer')
 include ':react-native-eventsource'
 project(':react-native-eventsource').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-eventsource/android')
 include ':react-native-vector-icons'
