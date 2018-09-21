@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "com.insanityradio.player_v2.app"
+               BuildableName = "com.insanityradio.insanityradio.app"
                BlueprintName = "com.insanityradio.insanityradio"
                ReferencedContainer = "container:com.insanityradio.insanityradio.xcodeproj">
             </BuildableReference>
@@ -72,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "com.insanityradio.player_v2.app"
+            BuildableName = "com.insanityradio.insanityradio.app"
             BlueprintName = "com.insanityradio.insanityradio"
             ReferencedContainer = "container:com.insanityradio.insanityradio.xcodeproj">
          </BuildableReference>
@@ -81,7 +81,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       language = ""
@@ -96,7 +96,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "com.insanityradio.player_v2.app"
+            BuildableName = "com.insanityradio.insanityradio.app"
             BlueprintName = "com.insanityradio.insanityradio"
             ReferencedContainer = "container:com.insanityradio.insanityradio.xcodeproj">
          </BuildableReference>
@@ -115,7 +115,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "com.insanityradio.player_v2.app"
+            BuildableName = "com.insanityradio.insanityradio.app"
             BlueprintName = "com.insanityradio.insanityradio"
             ReferencedContainer = "container:com.insanityradio.insanityradio.xcodeproj">
          </BuildableReference>
