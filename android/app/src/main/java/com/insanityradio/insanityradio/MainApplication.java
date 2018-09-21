@@ -4,7 +4,7 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import com.github.yamill.orientation.OrientationPackage;
-import fm.indiecast.rnaudiostreamer.RNAudioStreamerPackage;
+import com.insanityradio.rnaudiostreamer.RNAudioStreamerPackage;
 import com.tanguyantoine.react.MusicControl;
 import com.brentvatne.react.ReactVideoPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
