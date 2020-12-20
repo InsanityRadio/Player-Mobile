@@ -1,6 +1,6 @@
 import React from 'react';
 import { Animated, StyleSheet, Text, Image, ImageBackground, View, StatusBar } from 'react-native';
-import { COLOR, ThemeProvider, Toolbar, ActionButton } from 'react-native-material-ui';
+import { COLOR, Toolbar, ActionButton } from 'react-native-material-ui-upmenu-fork';
 
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 
@@ -124,7 +124,7 @@ export default class PlayerMeta extends React.Component {
 	setupControls () {
 
 		MusicControl.enableBackgroundMode(true);
-		MusicControl.handleAudioInterruptions(true);
+		// MusicControl.handleAudioInterruptions(true);
 		MusicControl.enableControl('closeNotification', true, {when: 'paused'})
 
 		MusicControl.enableControl('play', true)

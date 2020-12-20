@@ -1,6 +1,6 @@
 import React from 'react';
 import { Animated, StyleSheet, Text, Image, ImageBackground, View, StatusBar } from 'react-native';
-import { COLOR, ThemeProvider, Toolbar, ActionButton } from 'react-native-material-ui';
+import { COLOR, Toolbar, ActionButton } from 'react-native-material-ui-upmenu-fork';
 
 import FontAwesome, { Icons } from 'react-native-fontawesome';
 

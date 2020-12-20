@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, Image, View, StatusBar, Animated, Alert, TouchableWithoutFeedback } from 'react-native';
-import { COLOR, ThemeProvider, Toolbar } from 'react-native-material-ui';
+import { COLOR, Toolbar } from 'react-native-material-ui-upmenu-fork';
 import Video from 'react-native-video';
-import Orientation from 'react-native-orientation';
+import Orientation from 'react-native-orientation-locker';
 
 import Container from './Container';
 import { PlayerControls, PlayerControlsShort } from './PlayerControls';

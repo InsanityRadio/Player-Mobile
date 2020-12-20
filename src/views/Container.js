@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, SafeAreaView, View, StatusBar } from 'react-native';
-import { COLOR, ThemeProvider } from 'react-native-material-ui';
+import { COLOR } from 'react-native-material-ui-upmenu-fork';
 
 const styles = StyleSheet.create({
 	container: {

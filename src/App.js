@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, BackHandler } from 'react-native';
-import { COLOR, ThemeProvider } from 'react-native-material-ui';
+import { COLOR, ThemeContext, getTheme } from 'react-native-material-ui-upmenu-fork';
 
 import Main from './views/Main';
 
@@ -8,6 +8,8 @@ import config from './config';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { YellowBox } from 'react-native';
+
+const ThemeProvider = ThemeContext.Provider;
 
 function ignoreWarnings(type, ignoreMessages) {
 	if (!ignoreMessages) {
@@ -104,8 +106,9 @@ export default class App extends React.Component {
 			console.log('Rendered whilst unready')
 			return null;
 		}
+		console.log('render dbg', ThemeProvider, Main)
 		return (
-			<ThemeProvider uiTheme={uiTheme}>
+			<ThemeProvider value={getTheme(uiTheme)}>
 				<Main />
 			</ThemeProvider>
 		);
@@ -113,4 +116,5 @@ export default class App extends React.Component {
 
 }
 
+Text.defaultProps = Text.defaultProps || {};
 Text.defaultProps.style = { fontFamily: 'Josefin Sans' }
