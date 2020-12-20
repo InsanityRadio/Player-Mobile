@@ -43,7 +43,7 @@
     "react-native-vector-icons": "^7.1.0",
     "react-native-video": "^5.0.2",
     "react-native-video-controls": "^2.7.1",
-    "react-native-webview": "10.1.1"
+    "react-native-webview": "11.0.0"
   },
   "rnpm": {
     "assets": [
